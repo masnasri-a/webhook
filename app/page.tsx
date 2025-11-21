@@ -98,7 +98,7 @@ export default function Home() {
               </button>
             </div>
             <code className="block overflow-x-auto rounded-xl bg-white px-4 py-3 font-mono text-[13px] text-zinc-800 shadow-inner">
-              curl -X POST http://localhost:3000/api/webhook -H "Content-Type:
+              curl -X POST https://webhook-phi.vercel.app/api/webhook -H "Content-Type:
               application/json" -d '{`{"hello":"world"}`}'
             </code>
             {latestHit && (
