@@ -21,15 +21,17 @@ export default function TelegramPage() {
 
       const response = await fetch("/api/telegram", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message }),
       });
 
-      const data = await response.json().catch(() => null);
+      const data = await response.json().catch(() => undefined);
       if (!response.ok) {
         setResult({
           ok: false,
-          text: data?.error || "Gagal kirim message ke Telegram.",
+          text:
+            data?.error ||
+            "Respons API tidak valid. Gagal kirim message ke Telegram.",
         });
         return;
       }
