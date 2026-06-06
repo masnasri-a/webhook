@@ -20,6 +20,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Telegram endpoint
+
+Tambahkan environment variable berikut agar endpoint Telegram aktif:
+
+```bash
+TELEGRAM_BOT_TOKEN=isi_token_bot_anda
+TELEGRAM_CHAT_ID=isi_chat_id_anda
+```
+
+Lalu kirim message ke API:
+
+```bash
+curl -X POST http://localhost:3000/api/telegram \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Halo dari webhook"}'
+```
+
+UI untuk kirim message tersedia di halaman:
+
+```
+/telegram
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
