@@ -36,6 +36,9 @@ export async function POST(request: Request) {
     headers,
     body,
   };
+  if (webhookEvents.length >= MAX_EVENTS) {
+    webhookEvents.pop();
+  }
 
   webhookEvents = [newEvent, ...webhookEvents].slice(0, MAX_EVENTS);
 
